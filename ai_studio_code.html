@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tập đoàn Giáo dục Quốc tế Kaplan | Hệ sinh thái Giáo dục Toàn cầu</title>
+
+  <!-- Google Fonts: Playfair Display & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kaplan: {
+              DEFAULT: '#243457',
+              dark: '#18243E',
+              darker: '#10192D',
+              light: '#334875',
+              soft: '#EEF2F8',
+              gold: '#C5A059',
+              goldLight: '#F4EFE4',
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          boxShadow: {
+            'luxury': '0 20px 50px -12px rgba(36, 52, 87, 0.12)',
+            'card': '0 10px 30px -5px rgba(36, 52, 87, 0.07)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: #1E293B;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-editorial {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Subtle architectural grid for dark sections */
+    .bg-grid-navy {
+      background-color: #243457;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Image frame hover */
+    .img-zoom img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #243457;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#243457] selection:text-white">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <a href="#top" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-lg bg-[#243457] flex items-center justify-center shadow-sm group-hover:bg-[#18243E] transition-colors">
+            <span class="font-editorial text-white font-bold text-xl tracking-tight">K</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[#243457] font-bold text-lg tracking-[0.14em] leading-none">KAPLAN</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mt-1 font-medium">Global Education Since 1938</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="#gioi-thieu" class="hover:text-[#243457] transition-colors">Giới thiệu</a>
+          <a href="#linh-vuc" class="hover:text-[#243457] transition-colors">Lĩnh vực hoạt động</a>
+          <a href="#gia-tri" class="hover:text-[#243457] transition-colors">Giá trị giáo dục</a>
+          <a href="#viet-nam" class="hover:text-[#243457] transition-colors">Hợp tác Việt Nam</a>
+          <a href="#dia-phuong" class="hover:text-[#243457] transition-colors">Giáo dục địa phương</a>
+        </nav>
+
+        <!-- Action CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#lien-he" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#243457] text-white text-sm font-medium hover:bg-[#18243E] transition-all shadow-sm hover:shadow-md">
+            <span>Kết nối hợp tác</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-[#243457] hover:bg-slate-100" aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-2 shadow-lg">
+      <a href="#gioi-thieu" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#243457]">1. Giới thiệu chung về Kaplan</a>
+      <a href="#linh-vuc" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#243457]">2. Các lĩnh vực hoạt động giáo dục</a>
+      <a href="#gia-tri" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#243457]">3. Giá trị giáo dục & phát triển</a>
+      <a href="#viet-nam" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#243457]">4. Kết nối hợp tác tại Việt Nam</a>
+      <a href="#dia-phuong" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#243457]">5. Đồng hành cùng giáo dục địa phương</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="top" class="relative pt-20 overflow-hidden bg-[#243457]">
+    <!-- Background Real Photo with Luxury Navy Scrim -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.ctfassets.net/gogvzi849aaj/60g9Ww3AzNzKsTdAdM5rxJ/1b57e2db1d7f5d2b9b5d1bdb05623cc6/OurMission_2.jpg?fm=webp&q=85"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80';"
+        referrerpolicy="no-referrer"
+        alt="Hệ sinh thái giáo dục quốc tế Kaplan"
+        class="w-full h-full object-cover object-center opacity-35"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#18243E]/95 via-[#243457]/90 to-[#243457]/75"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 text-white">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-xs font-medium tracking-wider uppercase text-[#E8D5AD] mb-6">
+            <span class="w-2 h-2 rounded-full bg-[#C5A059]"></span>
+            Thành lập năm 1938 tại Hoa Kỳ • Hơn 85 năm phát triển
+          </div>
+
+          <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight mb-6">
+            Tập đoàn Giáo dục Quốc tế <span class="text-[#E8D5AD]">Kaplan</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mb-8 font-light">
+            Hệ sinh thái giáo dục đa dạng có nguồn gốc từ Hoa Kỳ, phục vụ người học, các cơ sở giáo dục và tổ chức, doanh nghiệp trên toàn cầu với triết lý mở rộng cơ hội tiếp cận nền giáo dục chất lượng cho mỗi cá nhân.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#gioi-thieu" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A059] text-[#18243E] font-semibold text-sm hover:bg-[#d6b36e] transition-all shadow-lg">
+              <span>Khám phá hồ sơ năng lực</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#viet-nam" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 text-white border border-white/25 font-medium text-sm hover:bg-white/20 transition-all backdrop-blur-sm">
+              <span>Định hướng hợp tác tại Việt Nam</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#18243E]">
+            <div class="aspect-[4/3] overflow-hidden img-zoom">
+              <img
+                src="https://www.kaplanpathways.com/tachyon/sites/4/2023/02/university-of-york-international-pathways-college-students-Yo0754.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80';"
+                referrerpolicy="no-referrer"
+                alt="Sinh viên quốc tế tại Kaplan International Pathways"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 bg-gradient-to-t from-[#10192D] via-[#18243E] to-[#18243E]/95 text-white">
+              <p class="text-xs uppercase tracking-widest text-[#C5A059] font-semibold mb-1.5">Dấu ấn toàn cầu</p>
+              <p class="text-sm text-slate-200 leading-relaxed">
+                Kết nối kiến thức học thuật với năng lực ứng dụng, đồng hành cùng người học phát triển tư duy độc lập trong môi trường quốc tế.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Metrics Strip -->
+      <div class="mt-16 pt-10 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 text-white">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
+          <div class="font-editorial text-3xl sm:text-4xl font-bold text-[#E8D5AD]">1938</div>
+          <div class="text-xs sm:text-sm text-slate-300 mt-1">Thành lập tại Hoa Kỳ bởi Stanley Kaplan</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
+          <div class="font-editorial text-3xl sm:text-4xl font-bold text-[#E8D5AD]">85+ Năm</div>
+          <div class="text-xs sm:text-sm text-slate-300 mt-1">Bề dày phát triển hệ sinh thái giáo dục</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
+          <div class="font-editorial text-3xl sm:text-4xl font-bold text-[#E8D5AD]">27 Quốc gia</div>
+          <div class="text-xs sm:text-sm text-slate-300 mt-1">Mạng lưới hiện diện & đối tác toàn cầu</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
+          <div class="font-editorial text-3xl sm:text-4xl font-bold text-[#E8D5AD]">~1,2 Triệu</div>
+          <div class="text-xs sm:text-sm text-slate-300 mt-1">Người học được phục vụ hiện nay</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 1: GIỚI THIỆU CHUNG ==================== -->
+  <section id="gioi-thieu" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <!-- Left Sticky Photo Composition -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+          <div class="relative">
+            <div class="rounded-2xl overflow-hidden shadow-luxury border border-slate-100 img-zoom">
+              <img
+                src="https://kaplan.edu.vn/wp-content/uploads/2024/03/Reception-Odeon-scaled.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80';"
+                referrerpolicy="no-referrer"
+                alt="Không gian học tập hiện đại tại Kaplan City Campus"
+                class="w-full h-[360px] sm:h-[420px] object-cover"
+              />
+            </div>
+
+            <!-- Floating Secondary Image -->
+            <div class="hidden sm:block absolute -bottom-8 -right-6 w-56 rounded-xl overflow-hidden shadow-xl border-4 border-white img-zoom">
+              <img
+                src="https://www.3istudio.sg/wp-content/uploads/slider6/3istudio-kaplan-wilkie-edge-11.jpeg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';"
+                referrerpolicy="no-referrer"
+                alt="Khu học xá Kaplan Wilkie Edge"
+                class="w-full h-36 object-cover"
+              />
+            </div>
+
+            <!-- Heritage Badge -->
+            <div class="mt-6 sm:mt-12 bg-[#F7F9FC] border border-slate-200/80 rounded-xl p-5 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#243457] text-[#E8D5AD] flex items-center justify-center shrink-0 font-editorial font-bold text-lg">
+                85+
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-[#243457]">Di sản từ nhà giáo dục Stanley Kaplan</p>
+                <p class="text-xs text-slate-600 mt-0.5">Hợp tác với hàng nghìn đối tác giáo dục và doanh nghiệp trên toàn cầu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Complete Narrative -->
+        <div class="lg:col-span-7 reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 rounded-md bg-[#243457]/10 text-[#243457] text-xs font-bold tracking-wider uppercase">Phần 01</span>
+            <div class="h-px flex-1 bg-slate-200"></div>
+          </div>
+
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#243457] leading-tight mb-8">
+            1. Giới thiệu chung về Kaplan
+          </h2>
+
+          <div class="space-y-5 text-slate-700 text-[16px] leading-[1.8]">
+            <p>
+              Kaplan là tổ chức cung cấp dịch vụ giáo dục quốc tế có nguồn gốc từ Hoa Kỳ, được thành lập năm 1938 bởi nhà giáo dục Stanley Kaplan. Trải qua hơn 85 năm phát triển, Kaplan đã xây dựng một hệ sinh thái giáo dục đa dạng, phục vụ người học, các cơ sở giáo dục và tổ chức, doanh nghiệp trên nhiều quốc gia.
+            </p>
+
+            <p class="font-medium text-[#243457] bg-[#F7F9FC] border-l-4 border-[#243457] px-5 py-4 rounded-r-xl">
+              Hiện nay, Kaplan hoạt động tại 27 quốc gia, phục vụ khoảng 1,2 triệu người học và hợp tác với hàng nghìn đối tác giáo dục, doanh nghiệp trên toàn cầu.
+            </p>
+
+            <!-- Philosophy Quote Box -->
+            <blockquote class="relative my-6 p-6 sm:p-7 rounded-2xl bg-[#243457] text-white shadow-card">
+              <svg class="w-8 h-8 text-[#C5A059]/60 mb-3" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              <p class="text-[16px] sm:text-[17px] leading-relaxed font-light text-slate-100">
+                Triết lý giáo dục của Kaplan bắt nguồn từ niềm tin rằng mỗi cá nhân đều xứng đáng có cơ hội tiếp cận nền giáo dục chất lượng và phát triển năng lực của mình, không phụ thuộc vào xuất phát điểm hay hoàn cảnh cá nhân.
+              </p>
+            </blockquote>
+
+            <p>
+              Từ những chương trình hỗ trợ học sinh chuẩn bị vào đại học trong những ngày đầu thành lập, Kaplan đã phát triển thành một tổ chức giáo dục quốc tế, cung cấp các chương trình đào tạo, giải pháp học tập và dịch vụ hỗ trợ giáo dục ở nhiều cấp độ.
+            </p>
+
+            <p>
+              Kaplan hướng tới việc kết nối kiến thức học thuật với năng lực ứng dụng, đồng thời giúp người học phát triển tư duy độc lập, khả năng thích ứng và những kỹ năng cần thiết để học tập, làm việc trong môi trường quốc tế.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: CÁC LĨNH VỰC HOẠT ĐỘNG ==================== -->
+  <section id="linh-vuc" class="py-20 lg:py-28 bg-[#F7F9FC] border-y border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-[#243457] text-white text-xs font-semibold tracking-widest uppercase mb-4">
+          Phần 02 • Hệ sinh thái toàn diện
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-[#243457] mb-6">
+          2. Các lĩnh vực hoạt động giáo dục
+        </h2>
+        <p class="text-slate-600 text-[16px] leading-relaxed">
+          Hệ sinh thái Kaplan bao gồm nhiều lĩnh vực, từ giáo dục dự bị đại học, giáo dục đại học, đào tạo ngoại ngữ đến phát triển kỹ năng và đào tạo chuyên môn. Các hoạt động được triển khai thông qua những đơn vị giáo dục trực thuộc và mạng lưới đối tác quốc tế.
+        </p>
+      </div>
+
+      <!-- Quick Sub-navigation Pills -->
+      <div class="flex flex-wrap justify-center gap-2.5 mb-14 reveal">
+        <a href="#sec-2-1" class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-medium text-[#243457] hover:bg-[#243457] hover:text-white transition-all shadow-sm">2.1 Chuyển tiếp đại học</a>
+        <a href="#sec-2-2" class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-medium text-[#243457] hover:bg-[#243457] hover:text-white transition-all shadow-sm">2.2 Kaplan Business School</a>
+        <a href="#sec-2-3" class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-medium text-[#243457] hover:bg-[#243457] hover:text-white transition-all shadow-sm">2.3 Đào tạo tại Singapore</a>
+        <a href="#sec-2-4" class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-medium text-[#243457] hover:bg-[#243457] hover:text-white transition-all shadow-sm">2.4 Ngoại ngữ & Học thuật</a>
+        <a href="#sec-2-5" class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-medium text-[#243457] hover:bg-[#243457] hover:text-white transition-all shadow-sm">2.5 Đào tạo chuyên môn</a>
+      </div>
+
+      <!-- 2.1 Kaplan International Pathways -->
+      <div id="sec-2-1" class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden mb-12 reveal">
+        <div class="grid lg:grid-cols-12">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 relative min-h-[300px] lg:min-h-full bg-[#243457] img-zoom overflow-hidden">
+            <img
+              src="https://www.kaplanpathways.com/tachyon/sites/4/2025/10/homepage-header-image-20y.png?resize=1336%2C400&crop=0px%2C12px%2C1335px%2C401px"
+              onerror="this.onerror=null;this.src='https://www.kaplanpathways.com/tachyon/sites/4/2023/02/university-of-york-international-pathways-college-students-Yo0754.jpg';"
+              referrerpolicy="no-referrer"
+              alt="Kaplan International Pathways"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#18243E]/90 via-[#243457]/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-3 py-1 rounded-md bg-[#C5A059] text-[#18243E] text-xs font-bold uppercase tracking-wider mb-3">
+                Kaplan International Pathways
+              </span>
+              <p class="text-sm font-medium text-slate-100 leading-relaxed">
+                Mạng lưới đại học đối tác tại 5 điểm đến giáo dục hàng đầu:
+              </p>
+              <div class="flex flex-wrap gap-2 mt-2.5">
+                <span class="px-2.5 py-1 rounded bg-white/15 backdrop-blur-sm text-xs">Vương quốc Anh</span>
+                <span class="px-2.5 py-1 rounded bg-white/15 backdrop-blur-sm text-xs">Hoa Kỳ</span>
+                <span class="px-2.5 py-1 rounded bg-white/15 backdrop-blur-sm text-xs">Canada</span>
+                <span class="px-2.5 py-1 rounded bg-white/15 backdrop-blur-sm text-xs">Australia</span>
+                <span class="px-2.5 py-1 rounded bg-white/15 backdrop-blur-sm text-xs">New Zealand</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 p-7 sm:p-10 lg:p-12">
+            <div class="text-xs font-bold uppercase tracking-widest text-[#C5A059] mb-2">Mục 2.1</div>
+            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[#243457] mb-4">
+              2.1. Giáo dục quốc tế và các chương trình chuyển tiếp đại học
+            </h3>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Thông qua Kaplan International Pathways, Kaplan hợp tác với các trường đại học tại Vương quốc Anh, Hoa Kỳ, Canada, Australia và New Zealand nhằm mở rộng cơ hội tiếp cận giáo dục đại học quốc tế.
+            </p>
+
+            <h4 class="text-sm font-bold uppercase tracking-wider text-[#243457] mb-4">
+              Các chương trình và dịch vụ bao gồm:
+            </h4>
+
+            <div class="space-y-3.5 mb-6">
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <span class="w-6 h-6 rounded-full bg-[#243457] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                  <strong class="text-[#243457]">Chương trình dự bị đại học (Foundation):</strong> Hỗ trợ học sinh xây dựng nền tảng kiến thức chuyên ngành, tiếng Anh học thuật và phương pháp học tập để chuẩn bị cho bậc đại học.
+                </p>
+              </div>
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <span class="w-6 h-6 rounded-full bg-[#243457] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                  <strong class="text-[#243457]">Chương trình chuyển tiếp vào đại học (International Year One và các chương trình tương đương):</strong> Tạo lộ trình phù hợp cho học sinh quốc tế theo yêu cầu và cấu trúc đào tạo của từng trường đối tác.
+                </p>
+              </div>
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <span class="w-6 h-6 rounded-full bg-[#243457] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                  <strong class="text-[#243457]">Chương trình dự bị thạc sĩ (Pre-Master’s):</strong> Hỗ trợ người học bổ sung kiến thức, kỹ năng nghiên cứu và năng lực học thuật cần thiết trước khi bước vào chương trình sau đại học.
+                </p>
+              </div>
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <span class="w-6 h-6 rounded-full bg-[#243457] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                  <strong class="text-[#243457]">Tuyển sinh trực tiếp vào chương trình đại học và sau đại học:</strong> Hỗ trợ người học tiếp cận các chương trình đào tạo tại những trường đại học đối tác, tùy theo điều kiện tuyển sinh.
+                </p>
+              </div>
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <span class="w-6 h-6 rounded-full bg-[#243457] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">5</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                  <strong class="text-[#243457]">Hỗ trợ học tập và hòa nhập:</strong> Cung cấp sự hướng dẫn phù hợp trong quá trình chuẩn bị hồ sơ, chuyển tiếp học thuật và thích nghi với môi trường học tập quốc tế.
+                </p>
+              </div>
+            </div>
+
+            <p class="text-sm text-slate-600 italic border-l-2 border-[#C5A059] pl-4 leading-relaxed">
+              Các chương trình được thiết kế nhằm giúp học sinh có sự chuẩn bị vững vàng hơn về kiến thức, ngôn ngữ, phương pháp học và khả năng thích ứng, qua đó nâng cao sự sẵn sàng cho hành trình giáo dục đại học.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.2 Kaplan Business School (Australia) -->
+      <div id="sec-2-2" class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden mb-12 reveal">
+        <div class="grid lg:grid-cols-12">
+          <!-- Content Column -->
+          <div class="lg:col-span-7 p-7 sm:p-10 lg:p-12 order-2 lg:order-1">
+            <div class="text-xs font-bold uppercase tracking-widest text-[#C5A059] mb-2">Mục 2.2 • Australia</div>
+            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[#243457] mb-4">
+              2.2. Giáo dục đại học tại Australia – Kaplan Business School
+            </h3>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Kaplan Business School (KBS) là cơ sở giáo dục đại học tại Australia, cung cấp các chương trình đào tạo bậc cử nhân và sau đại học. KBS được quản lý chất lượng trong hệ thống giáo dục đại học Australia và có các chương trình được công nhận theo quy định của cơ quan quản lý giáo dục đại học nước sở tại.
+            </p>
+
+            <h4 class="text-sm font-bold uppercase tracking-wider text-[#243457] mb-4">
+              Các lĩnh vực đào tạo nổi bật gồm:
+            </h4>
+
+            <div class="grid sm:grid-cols-2 gap-3 mb-6">
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Quản trị kinh doanh và quản lý;</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Kế toán, tài chính và phân tích kinh doanh;</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Công nghệ thông tin;</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Marketing và quản trị doanh nghiệp;</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Quản trị du lịch và khách sạn;</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F7F9FC] border border-slate-100">
+                <div class="w-2 h-2 rounded-full bg-[#C5A059] shrink-0"></div>
+                <span class="text-sm font-medium text-[#243457]">Quản trị dự án, đổi mới sáng tạo và lãnh đạo.</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#243457]/5 border border-[#243457]/15 text-sm text-slate-700 leading-relaxed">
+              Bên cạnh kiến thức chuyên môn, KBS chú trọng phát triển khả năng tư duy phản biện, giải quyết vấn đề, giao tiếp, làm việc nhóm và vận dụng kiến thức trong môi trường nghề nghiệp.
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div class="lg:col-span-5 relative min-h-[300px] lg:min-h-full order-1 lg:order-2 img-zoom overflow-hidden bg-[#243457]">
+            <img
+              src="https://www.kbs.edu.au/sites/default/files/students-in-it-room-syd-cropped.jpg?fid=8368"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80';"
+              referrerpolicy="no-referrer"
+              alt="Sinh viên tại Kaplan Business School Sydney, Australia"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#18243E]/85 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-3 py-1 rounded bg-white/15 backdrop-blur-md text-xs font-semibold tracking-wider uppercase mb-2">
+                Kaplan Business School (KBS)
+              </span>
+              <p class="text-xs text-slate-200">
+                Cơ sở đào tạo bậc Cử nhân và Sau đại học được quản lý chất lượng trong hệ thống giáo dục đại học Australia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.3 Kaplan Singapore -->
+      <div id="sec-2-3" class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden mb-12 reveal">
+        <div class="grid lg:grid-cols-12">
+          <!-- Dual Photo Column -->
+          <div class="lg:col-span-5 bg-[#243457] p-6 flex flex-col justify-between gap-4">
+            <div class="rounded-xl overflow-hidden flex-1 min-h-[220px] img-zoom relative">
+              <img
+                src="https://www.3istudio.sg/wp-content/uploads/slider6/3istudio-kaplan-wilkie-edge-11.jpeg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80';"
+                referrerpolicy="no-referrer"
+                alt="Kaplan Higher Education Academy tại Wilkie Edge Singapore"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute bottom-3 left-3 px-3 py-1 rounded bg-[#18243E]/85 backdrop-blur-sm text-white text-xs font-medium">
+                Kaplan City Campus @ Wilkie Edge, Singapore
+              </div>
+            </div>
+
+            <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-white">
+              <p class="text-xs font-bold uppercase tracking-widest text-[#E8D5AD] mb-3">Đối tác đại học tiêu biểu tại Kaplan Singapore</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                <div class="bg-white/10 rounded-lg px-3 py-2 font-medium">University College Dublin <span class="block text-[11px] text-slate-300 font-normal">Ireland</span></div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 font-medium">Murdoch University <span class="block text-[11px] text-slate-300 font-normal">Australia</span></div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 font-medium">Northumbria University <span class="block text-[11px] text-slate-300 font-normal">Vương quốc Anh</span></div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 font-medium">University of Portsmouth <span class="block text-[11px] text-slate-300 font-normal">Vương quốc Anh</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 p-7 sm:p-10 lg:p-12">
+            <div class="text-xs font-bold uppercase tracking-widest text-[#C5A059] mb-2">Mục 2.3 • Singapore</div>
+            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[#243457] mb-5">
+              2.3. Giáo dục đại học và hợp tác đào tạo tại Singapore
+            </h3>
+
+            <div class="space-y-4 text-slate-700 leading-relaxed text-[15.5px]">
+              <p>
+                Thông qua Kaplan Higher Education Academy và các đơn vị giáo dục liên quan tại Singapore, Kaplan cung cấp nhiều chương trình đào tạo từ dự bị, cao đẳng đến đại học, sau đại học và các chương trình phát triển chuyên môn.
+              </p>
+              <p>
+                Một điểm nổi bật là mô hình hợp tác đào tạo với các trường đại học quốc tế, giúp người học tiếp cận chương trình giáo dục đại học của các trường đối tác trong môi trường học tập tại Singapore.
+              </p>
+              <p>
+                Các đối tác đại học được Kaplan Singapore giới thiệu bao gồm <strong class="text-[#243457]">University College Dublin (Ireland), Murdoch University (Australia), Northumbria University và University of Portsmouth (Vương quốc Anh)</strong>, cùng những trường đại học khác.
+              </p>
+
+              <div class="py-3">
+                <p class="text-sm font-semibold text-[#243457] mb-2.5">Những lĩnh vực đào tạo tiêu biểu gồm:</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Kinh doanh</span>
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Tài chính</span>
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Công nghệ thông tin</span>
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Truyền thông</span>
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Khoa học dữ liệu</span>
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#F7F9FC] border border-slate-200 text-xs sm:text-sm font-medium text-[#243457]">Du lịch và khách sạn</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Những lĩnh vực đào tạo tiêu biểu gồm kinh doanh, tài chính, công nghệ thông tin, truyền thông, khoa học dữ liệu, du lịch và khách sạn.</p>
+              </div>
+
+              <p class="text-slate-600 bg-[#F7F9FC] p-4 rounded-xl border border-slate-100 text-sm">
+                Mô hình này góp phần mở rộng lựa chọn học tập quốc tế, đồng thời tạo điều kiện cho người học cân nhắc lộ trình, thời gian và chi phí đào tạo phù hợp với nhu cầu cá nhân.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.4 & 2.5 Two-Column Feature Cards -->
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- 2.4 Đào tạo ngoại ngữ và phát triển năng lực học thuật -->
+        <div id="sec-2-4" class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden flex flex-col reveal">
+          <div class="h-60 overflow-hidden relative img-zoom bg-[#243457]">
+            <img
+              src="https://images.ctfassets.net/gogvzi849aaj/6WLBvAkvrzMWBIGK66S5Cu/29ea7086f9b417d482188e4f8cac91a8/49108-W-KNA-AAL-IHE-Article-University-of-Illinois-Urbana-Champaign-Chantelle-Thompson.png?fm=webp&q=85"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80';"
+              referrerpolicy="no-referrer"
+              alt="Đào tạo ngoại ngữ và phát triển năng lực học thuật Kaplan"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#18243E]/80 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-6 px-3 py-1 rounded-md bg-[#C5A059] text-[#18243E] text-xs font-bold uppercase tracking-wider">Mục 2.4</span>
+          </div>
+          <div class="p-7 sm:p-9 flex-1 flex flex-col">
+            <h3 class="font-editorial text-2xl font-bold text-[#243457] mb-4">
+              2.4. Đào tạo ngoại ngữ và phát triển năng lực học thuật
+            </h3>
+            <div class="space-y-4 text-slate-700 text-[15.5px] leading-relaxed">
+              <p>
+                Đào tạo ngôn ngữ và chuẩn bị học thuật là một phần trong hệ sinh thái giáo dục quốc tế của Kaplan.
+              </p>
+              <p>
+                Thông qua các đơn vị và chương trình chuyên biệt, Kaplan cung cấp những giải pháp giúp người học phát triển năng lực tiếng Anh, chuẩn bị cho các kỳ thi, đáp ứng yêu cầu đầu vào và thích nghi với việc học tập bằng tiếng Anh.
+              </p>
+              <p>
+                Các hoạt động này hướng tới việc phát triển đồng thời năng lực ngôn ngữ, kỹ năng học thuật và sự tự tin trong giao tiếp, góp phần tạo nền tảng cho quá trình học tập lâu dài.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.5 Đào tạo chuyên môn và phát triển năng lực nghề nghiệp -->
+        <div id="sec-2-5" class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden flex flex-col reveal">
+          <div class="h-60 overflow-hidden relative img-zoom bg-[#243457]">
+            <img
+              src="https://images.ctfassets.net/gogvzi849aaj/4sURePm8jAnMw6mYbhk87g/e7f2137f6c5d72f6f3595e8e7ee5dfe0/StudentProf_Hero.jpg?fm=webp&q=85"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80';"
+              referrerpolicy="no-referrer"
+              alt="Đào tạo chuyên môn và phát triển năng lực nghề nghiệp Kaplan"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#18243E]/80 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-6 px-3 py-1 rounded-md bg-[#C5A059] text-[#18243E] text-xs font-bold uppercase tracking-wider">Mục 2.5</span>
+          </div>
+          <div class="p-7 sm:p-9 flex-1 flex flex-col">
+            <h3 class="font-editorial text-2xl font-bold text-[#243457] mb-4">
+              2.5. Đào tạo chuyên môn và phát triển năng lực nghề nghiệp
+            </h3>
+            <div class="space-y-4 text-slate-700 text-[15.5px] leading-relaxed">
+              <p>
+                Ngoài giáo dục đại học, Kaplan còn hoạt động trong lĩnh vực đào tạo và bồi dưỡng chuyên môn, hỗ trợ người học và người đi làm cập nhật kiến thức, phát triển kỹ năng và chuẩn bị cho các kỳ thi chứng chỉ nghề nghiệp.
+              </p>
+              <p>
+                Các lĩnh vực bao gồm tài chính, kế toán, quản trị và những ngành nghề chuyên môn khác, tùy theo thị trường và đơn vị triển khai.
+              </p>
+              <p>
+                Hoạt động đào tạo của Kaplan không chỉ phục vụ mục tiêu đạt được bằng cấp, mà còn hướng tới học tập suốt đời, phát triển năng lực nghề nghiệp và khả năng thích ứng trước những thay đổi của nền kinh tế.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: GIÁ TRỊ GIÁO DỤC ==================== -->
+  <section id="gia-tri" class="py-20 lg:py-28 bg-grid-navy text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Header with Photo Accent -->
+      <div class="grid lg:grid-cols-12 gap-10 items-center mb-14 reveal">
+        <div class="lg:col-span-7">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-[#E8D5AD] text-xs font-semibold tracking-widest uppercase mb-4">
+            Phần 03 • Triết lý & Giá trị cốt lõi
+          </span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold leading-tight mb-5">
+            3. Giá trị giáo dục và định hướng phát triển người học
+          </h2>
+          <p class="text-slate-200 text-[16px] leading-relaxed mb-4">
+            Kaplan xác định chất lượng giáo dục không chỉ được thể hiện qua chương trình đào tạo hoặc văn bằng, mà còn qua sự tiến bộ của người học và những cơ hội mà giáo dục mang lại cho tương lai.
+          </p>
+          <p class="text-sm font-semibold uppercase tracking-widest text-[#C5A059]">
+            Các giá trị được chú trọng bao gồm:
+          </p>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden border border-white/15 shadow-2xl img-zoom">
+            <img
+              src="https://images.ctfassets.net/gogvzi849aaj/6rs7PpuPlHQ8m17oa93AgM/02adadca902d3a5f45750843feb3e5af/woman_with_glasses_discussion_in_business_meeting.jpg?fm=webp&q=85"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80';"
+              referrerpolicy="no-referrer"
+              alt="Thảo luận học thuật và phát triển năng lực tại Kaplan"
+              class="w-full h-60 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Core Values Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        <!-- Value 1 -->
+        <div class="p-7 rounded-2xl bg-white/[0.06] border border-white/15 backdrop-blur-sm hover:bg-white/[0.1] transition-all">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-editorial text-3xl font-bold text-[#C5A059]">01</span>
+            <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#E8D5AD]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Mở rộng cơ hội tiếp cận giáo dục</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Phát triển những lộ trình học tập đa dạng để người học có thể lựa chọn con đường phù hợp với năng lực, mục tiêu và điều kiện cá nhân.
+          </p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="p-7 rounded-2xl bg-white/[0.06] border border-white/15 backdrop-blur-sm hover:bg-white/[0.1] transition-all">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-editorial text-3xl font-bold text-[#C5A059]">02</span>
+            <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#E8D5AD]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Đề cao chất lượng học thuật</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Chú trọng kiến thức nền tảng, phương pháp học tập, tư duy phản biện, khả năng nghiên cứu và phát triển năng lực độc lập.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="p-7 rounded-2xl bg-white/[0.06] border border-white/15 backdrop-blur-sm hover:bg-white/[0.1] transition-all">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-editorial text-3xl font-bold text-[#C5A059]">03</span>
+            <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#E8D5AD]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Gắn kết giáo dục với thực tiễn</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Khuyến khích người học vận dụng kiến thức vào giải quyết vấn đề, phát triển kỹ năng nghề nghiệp và chuẩn bị cho môi trường làm việc không ngừng thay đổi.
+          </p>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="p-7 rounded-2xl bg-white/[0.06] border border-white/15 backdrop-blur-sm hover:bg-white/[0.1] transition-all lg:col-span-1">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-editorial text-3xl font-bold text-[#C5A059]">04</span>
+            <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#E8D5AD]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Tôn trọng sự đa dạng và phát triển cá nhân</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Xây dựng môi trường học tập khuyến khích sự hòa nhập, tôn trọng khác biệt và phát huy tiềm năng của mỗi người học.
+          </p>
+        </div>
+
+        <!-- Value 5 -->
+        <div class="p-7 rounded-2xl bg-gradient-to-br from-[#C5A059]/20 to-white/[0.06] border border-[#C5A059]/40 backdrop-blur-sm hover:bg-white/[0.1] transition-all md:col-span-2 lg:col-span-2">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-editorial text-3xl font-bold text-[#E8D5AD]">05</span>
+            <div class="w-10 h-10 rounded-full bg-[#C5A059]/30 flex items-center justify-center text-[#E8D5AD]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Thúc đẩy học tập suốt đời</h3>
+          <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed max-w-2xl">
+            Đồng hành cùng người học ở nhiều giai đoạn, từ chuẩn bị đại học, học tập chuyên sâu đến bồi dưỡng và nâng cao năng lực nghề nghiệp.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: ĐỊNH HƯỚNG KẾT NỐI TẠI VIỆT NAM ==================== -->
+  <section id="viet-nam" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <!-- Left Intro & Visual -->
+        <div class="lg:col-span-5 reveal">
+          <span class="inline-block px-3 py-1 rounded-md bg-[#243457]/10 text-[#243457] text-xs font-bold uppercase tracking-wider mb-4">
+            Phần 04 • Chiến lược Việt Nam
+          </span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#243457] leading-tight mb-5">
+            4. Định hướng kết nối và hợp tác giáo dục tại Việt Nam
+          </h2>
+          <p class="text-slate-700 text-[16px] leading-relaxed mb-5">
+            Tại Việt Nam, Kaplan phát triển hoạt động kết nối với người học, các cơ sở giáo dục và đối tác nhằm giới thiệu những cơ hội học tập quốc tế phù hợp với nhu cầu và định hướng phát triển nguồn nhân lực.
+          </p>
+          <p class="text-sm font-medium text-[#243457] bg-[#F7F9FC] p-4 rounded-xl border border-slate-200/80 mb-8">
+            Trên cơ sở nhu cầu thực tế của địa phương và khả năng phối hợp giữa các bên, một số hướng hợp tác có thể trao đổi, nghiên cứu gồm:
+          </p>
+
+          <div class="rounded-2xl overflow-hidden shadow-luxury border border-slate-100 img-zoom">
+            <img
+              src="https://images.ctfassets.net/gogvzi849aaj/1dKWFCJ7XiJucy8aRKxqht/2a6bd5348a964761bd6cdae7b4473eac/kaplan-global-reach-03.png?fm=webp&q=85"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80';"
+              referrerpolicy="no-referrer"
+              alt="Mạng lưới kết nối toàn cầu của Kaplan"
+              class="w-full h-64 object-cover bg-[#F7F9FC]"
+            />
+          </div>
+        </div>
+
+        <!-- Right 5 Cooperation Pillars -->
+        <div class="lg:col-span-7 space-y-4 reveal">
+          <!-- Direction 1 -->
+          <div class="group p-6 rounded-2xl bg-[#F7F9FC] hover:bg-white border border-slate-200/80 hover:border-[#243457]/30 hover:shadow-card transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#243457] text-[#E8D5AD] font-editorial font-bold text-lg flex items-center justify-center shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#243457] mb-2">Thông tin và định hướng giáo dục quốc tế</h3>
+                <p class="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                  Tổ chức các chương trình giới thiệu hệ thống giáo dục, ngành học, yêu cầu học thuật, kỹ năng và các lộ trình học tập quốc tế cho học sinh, phụ huynh và cán bộ giáo dục.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direction 2 -->
+          <div class="group p-6 rounded-2xl bg-[#F7F9FC] hover:bg-white border border-slate-200/80 hover:border-[#243457]/30 hover:shadow-card transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#243457] text-[#E8D5AD] font-editorial font-bold text-lg flex items-center justify-center shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#243457] mb-2">Tư vấn định hướng ngành nghề và phát triển năng lực</h3>
+                <p class="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                  Phối hợp chia sẻ thông tin về xu hướng ngành học, yêu cầu năng lực và mối liên hệ giữa đào tạo đại học với thị trường lao động trong nước và quốc tế.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direction 3 -->
+          <div class="group p-6 rounded-2xl bg-[#F7F9FC] hover:bg-white border border-slate-200/80 hover:border-[#243457]/30 hover:shadow-card transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#243457] text-[#E8D5AD] font-editorial font-bold text-lg flex items-center justify-center shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#243457] mb-2">Giao lưu và trao đổi học thuật</h3>
+                <p class="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                  Nghiên cứu khả năng tổ chức hội thảo, tọa đàm chuyên đề, các buổi chia sẻ trực tuyến với đại diện học thuật hoặc chuyên gia từ các đơn vị và trường đối tác phù hợp.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direction 4 -->
+          <div class="group p-6 rounded-2xl bg-[#F7F9FC] hover:bg-white border border-slate-200/80 hover:border-[#243457]/30 hover:shadow-card transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#243457] text-[#E8D5AD] font-editorial font-bold text-lg flex items-center justify-center shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#243457] mb-2">Kết nối giáo dục đại học và các chương trình chuyển tiếp</h3>
+                <p class="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                  Trao đổi về những lộ trình dự bị, chuyển tiếp, tuyển sinh đại học và sau đại học phù hợp với năng lực, nguyện vọng của người học.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direction 5 -->
+          <div class="group p-6 rounded-2xl bg-[#F7F9FC] hover:bg-white border border-slate-200/80 hover:border-[#243457]/30 hover:shadow-card transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#243457] text-[#E8D5AD] font-editorial font-bold text-lg flex items-center justify-center shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#243457] mb-2">Nghiên cứu các mô hình hợp tác đào tạo</h3>
+                <p class="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                  Tìm hiểu khả năng kết nối giữa các cơ sở giáo dục Việt Nam và các đơn vị, trường đối tác trong hệ sinh thái Kaplan, phù hợp với định hướng phát triển và quy định pháp luật hiện hành.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: ĐỒNG HÀNH CÙNG GIÁO DỤC ĐỊA PHƯƠNG ==================== -->
+  <section id="dia-phuong" class="py-20 lg:py-28 bg-[#F7F9FC] border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="bg-white rounded-3xl shadow-luxury border border-slate-200/80 overflow-hidden reveal">
+        <div class="grid lg:grid-cols-12">
+          <!-- Left Content -->
+          <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-[#C5A059]/15 text-[#8A6B2E] text-xs font-bold uppercase tracking-widest mb-4">
+              Phần 05 • Gắn kết địa phương
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#243457] leading-tight mb-6">
+              5. Định hướng đồng hành cùng giáo dục địa phương
+            </h2>
+
+            <div class="space-y-5 text-slate-700 text-[16px] leading-[1.8]">
+              <p>
+                Kaplan mong muốn đóng góp vào quá trình mở rộng cơ hội tiếp cận giáo dục quốc tế thông qua việc chia sẻ thông tin, kết nối nguồn lực giáo dục và hỗ trợ người học có thêm những lựa chọn phát triển phù hợp.
+              </p>
+
+              <!-- Highlight Thanh Hoa Province -->
+              <div class="p-6 rounded-2xl bg-[#F7F9FC] border-l-4 border-[#C5A059]">
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#243457] mb-2">
+                  <svg class="w-4 h-4 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Trọng tâm kết nối tại tỉnh Thanh Hóa</span>
+                </div>
+                <p class="text-slate-700 leading-relaxed">
+                  Đối với tỉnh Thanh Hóa, một địa phương có truyền thống hiếu học và nhu cầu phát triển nguồn nhân lực chất lượng cao, việc tăng cường trao đổi và kết nối với các tổ chức giáo dục quốc tế có thể góp phần tạo thêm cơ hội tiếp cận tri thức, phương pháp học tập và xu hướng đào tạo hiện đại.
+                </p>
+              </div>
+
+              <p>
+                Trên tinh thần tôn trọng nhu cầu thực tế của địa phương, Kaplan sẵn sàng trao đổi, tìm hiểu các cơ hội phối hợp với những cơ quan, cơ sở giáo dục và đối tác quan tâm, hướng tới các hoạt động thiết thực, phù hợp, có giá trị lâu dài đối với người học và cộng đồng.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Visual & Closing Manifesto -->
+          <div class="lg:col-span-5 bg-[#243457] text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div class="rounded-2xl overflow-hidden mb-8 border border-white/15 img-zoom">
+              <img
+                src="https://images.ctfassets.net/gogvzi849aaj/5A82ZVBYNa1nK3d2Y1ef0V/6a296065d2e4299f1a64d96b48de837/Business_Contact_Hero_3.jpg?fm=webp&q=85"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80';"
+                referrerpolicy="no-referrer"
+                alt="Hợp tác giáo dục quốc tế Kaplan"
+                class="w-full h-56 object-cover"
+              />
+            </div>
+
+            <div>
+              <div class="w-12 h-1 bg-[#C5A059] mb-5"></div>
+              <p class="font-editorial italic text-xl sm:text-2xl leading-relaxed text-[#F4EFE4] mb-6">
+                “Giáo dục không chỉ mở ra cơ hội học tập, mà còn giúp mỗi cá nhân có thêm năng lực, sự tự tin và khả năng chủ động kiến tạo tương lai của chính mình.”
+              </p>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Đây cũng là tinh thần xuyên suốt trong hành trình phát triển giáo dục của Kaplan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT / PARTNERSHIP CTA ==================== -->
+  <section id="lien-he" class="py-16 lg:py-20 bg-[#243457] text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="font-editorial text-2xl sm:text-3xl font-bold mb-4">
+        Trao đổi cơ hội kết nối và hợp tác giáo dục cùng Kaplan
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+        Dành cho các cơ quan quản lý giáo dục, trường học, cơ sở đào tạo và đối tác tại Việt Nam nói chung cũng như tỉnh Thanh Hóa nói riêng.
+      </p>
+
+      <form id="contact-form" class="max-w-2xl mx-auto bg-white/10 border border-white/15 backdrop-blur-md rounded-2xl p-6 sm:p-8 text-left">
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-200 mb-1.5">Họ và tên / Đại diện</label>
+            <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-2.5 rounded-lg bg-white/95 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A059]" />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-200 mb-1.5">Đơn vị / Cơ sở giáo dục</label>
+            <input type="text" required placeholder="Tên trường / Cơ quan / Tổ chức" class="w-full px-4 py-2.5 rounded-lg bg-white/95 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A059]" />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-200 mb-1.5">Email liên hệ</label>
+            <input type="email" required placeholder="email@donvi.edu.vn" class="w-full px-4 py-2.5 rounded-lg bg-white/95 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A059]" />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-200 mb-1.5">Lĩnh vực quan tâm</label>
+            <select class="w-full px-4 py-2.5 rounded-lg bg-white/95 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+              <option>Định hướng giáo dục quốc tế</option>
+              <option>Giao lưu & trao đổi học thuật</option>
+              <option>Chương trình chuyển tiếp đại học</option>
+              <option>Nghiên cứu mô hình hợp tác đào tạo</option>
+              <option>Phối hợp cùng giáo dục địa phương</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-5">
+          <label class="block text-xs font-medium text-slate-200 mb-1.5">Nội dung trao đổi</label>
+          <textarea rows="3" placeholder="Chia sẻ nhu cầu phối hợp hoặc câu hỏi của quý đơn vị..." class="w-full px-4 py-2.5 rounded-lg bg-white/95 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A059]"></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span id="form-status" class="text-xs text-[#E8D5AD] hidden">Cảm ơn quý đối tác! Thông tin đề xuất hợp tác đã được ghi nhận.</span>
+          <button type="submit" class="w-full sm:w-auto ml-auto px-7 py-3 rounded-full bg-[#C5A059] text-[#18243E] font-semibold text-sm hover:bg-[#d6b36e] transition-all shadow-md cursor-pointer">
+            Gửi thông tin kết nối
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#18243E] text-slate-300 py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
+            <span class="font-editorial text-[#E8D5AD] font-bold text-xl">K</span>
+          </div>
+          <div>
+            <div class="text-white font-bold tracking-[0.14em] text-base">KAPLAN</div>
+            <div class="text-xs text-slate-400">Tổ chức cung cấp dịch vụ giáo dục quốc tế • Thành lập năm 1938</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-300">
+          <a href="#gioi-thieu" class="hover:text-[#E8D5AD] transition-colors">Giới thiệu chung</a>
+          <a href="#linh-vuc" class="hover:text-[#E8D5AD] transition-colors">Lĩnh vực giáo dục</a>
+          <a href="#gia-tri" class="hover:text-[#E8D5AD] transition-colors">Giá trị cốt lõi</a>
+          <a href="#viet-nam" class="hover:text-[#E8D5AD] transition-colors">Hợp tác Việt Nam</a>
+          <a href="#dia-phuong" class="hover:text-[#E8D5AD] transition-colors">Giáo dục địa phương</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>© 2026 Hồ sơ giới thiệu Tập đoàn Giáo dục Quốc tế Kaplan.</p>
+        <p>Hoạt động tại 27 quốc gia • Phục vụ ~1,2 triệu người học toàn cầu</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submit simulation
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formStatus.classList.remove('hidden');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
